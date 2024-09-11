@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getSurahs } from "./data/metadata";
+import { getSurahs } from "./data/surah_data";
 import { Link } from "@tanstack/react-router";
 
 function SurahsPage() {
@@ -18,12 +18,12 @@ function SurahsPage() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1>Quran Shareef</h1>
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-wrap gap-4 items-center flex-row-reverse justify-center">
         {data?.map((surah) => (
           <Link
           to={`/surah/${surah.number}`}
-          className="text-2xl underline p-2 cursor-pointer hover:bg-gray-200 text-right"
+          preload="intent"
+          className="border border-gray-300 rounded-md p-2 cursor-pointer hover:bg-gray-200 text-right"
           key={surah.number}>
             {surah.number}. {surah.name}
           </Link>

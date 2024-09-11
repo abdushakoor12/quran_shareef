@@ -26,3 +26,9 @@ export const getSurahs = async (): Promise<Surah[]> => {
 
   return surahs;
 };
+
+export const getSurah = async (surahNumber: number): Promise<Surah | undefined> => {
+  const surahs = await getSurahs();
+  const surah = surahs.find(surah => surah.number === surahNumber);
+  return surah;
+};
