@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getSurahs } from "./data/metadata";
 
-function App() {
+function SurahsPage() {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["surahs"],
     queryFn: getSurahs,
@@ -38,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default SurahsPage;
