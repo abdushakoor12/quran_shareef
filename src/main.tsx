@@ -39,7 +39,7 @@ const surahsRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, surahsRoute]);
 
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree, defaultPreload: "intent" });
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
